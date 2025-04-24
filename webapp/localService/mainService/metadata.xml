@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZBATCH72FIORI_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZFIORIPRAC" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PRODUCTNAME"/>
+                </Key>
+                <Property Name="PRODUCTNAME" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PRODUCTNAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="QUANTITY" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="QUANTITY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EXTENDEDPRICE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="EXTENDEDPRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SHIPPERNAME" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SHIPPERNAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SHIPPERDATE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="SHIPPERDATE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="STATUS" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="STATUS" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZBATCH72FIORI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZFIORIPRACSet" EntityType="ZBATCH72FIORI_SRV.ZFIORIPRAC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <FunctionImport Name="ZSTATUS72" ReturnType="ZBATCH72FIORI_SRV.ZFIORIPRAC" EntitySet="ZFIORIPRACSet" m:HttpMethod="GET" sap:action-for="ZBATCH72FIORI_SRV.ZFIORIPRAC">
+                    <Parameter Name="STATUS" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link rel="self" href="http://b72s4hana:8888/sap/opu/odata/sap/ZBATCH72FIORI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://b72s4hana:8888/sap/opu/odata/sap/ZBATCH72FIORI_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

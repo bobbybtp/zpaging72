@@ -1,0 +1,82 @@
+<mvc:View controllerName="zpaging72.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+					<content>
+                    <Bar id="_IDGenBar1" design="SubHeader">
+                    <contentRight>
+                    <SearchField id="_IDGenSearchField"  placeholder="Product Name" width="40%" liveChange="handleSearch"></SearchField>
+                    </contentRight>
+                    </Bar>
+                    <Table id="otable" items="{path : 'invoice2>/ZFIORIPRACSet'}"      
+			mode="SingleSelectLeft">
+			<columns>
+				<Column id="_IDGenColumn1">
+					<Text id="_IDGenText1" text="PRODUCTNAME" />
+
+				</Column>
+
+
+				<Column id="_IDGenColumn2">
+					<Text id="_IDGenText2" text="QUANTITY" />
+
+				</Column>
+
+				<Column id="_IDGenColumn3">
+					<Text id="_IDGenText3" text="EXTENDEDPRICE" />
+
+				</Column>
+
+				<Column id="_IDGenColumn4">
+					<Text id="_IDGenText4" text="SHIPPERNAME" />
+
+				</Column>
+
+				<Column id="_IDGenColumn5">
+					<Text id="_IDGenText5" text="SHIPPEDDATE" />
+
+				</Column>
+
+				<Column id="_IDGenColumn6">
+					<Text id="_IDGenText6" text="STATUS" />
+
+				</Column>
+
+
+
+			</columns>
+
+
+			<items>
+
+				<ColumnListItem id="_IDGenColumnListItem1">
+
+					<cells>
+						<Text id="_IDGenText7" text="{invoice2>PRODUCTNAME}" />
+						<Text id="_IDGenText8" text="{invoice2>QUANTITY}" />
+						<Text id="_IDGenText9" text="{invoice2>EXTENDEDPRICE}" />
+						<Text id="_IDGenText10" text="{invoice2>SHIPPERNAME}" />
+						<Text id="_IDGenText11" text="{invoice2>SHIPPERDATE}" />
+						<Text id="_IDGenText12" text="{invoice2>STATUS}" />
+
+
+					</cells>
+
+				</ColumnListItem>
+
+			</items>
+
+
+
+
+		</Table>
+        
+		<Bar id="_IDGenBar2" design="SubHeader">
+        <contentMiddle>
+        <Button id="previous" type="Emphasized" icon="sap-icon://navigation-left-arrow" press="onPrevious"/>
+        <Button id="next" type="Emphasized" icon="sap-icon://navigation-right-arrow" press="onNext"/>
+</contentMiddle>
+        </Bar>
+                    </content>
+				</Page>
+</mvc:View>
