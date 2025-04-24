@@ -13,10 +13,7 @@ modules:
     parameters:
       service-key:
         name: zpaging72-repo-host-key
-  - name: zpaging72-uaa
-    parameters:
-      service-key:
-        name: zpaging72-uaa-key
+
   parameters:
     content:
       instance:
@@ -25,12 +22,7 @@ modules:
           ServiceInstanceName: zpaging72-html5-service
           ServiceKeyName: zpaging72-repo-host-key
           sap.cloud.service: zpaging72
-        - Authentication: OAuth2UserTokenExchange
-          Name: zpaging72_uaa
-          ServiceInstanceName: zpaging72-xsuaa-service
-          ServiceKeyName: zpaging72-uaa-key
-          sap.cloud.service: zpaging72
-        existing_destinations_policy: update
+   
   build-parameters:
     no-source: true
 - name: zpaging72-app-content
@@ -76,13 +68,6 @@ resources:
     service: destination
     service-name: zpaging72-destination-service
     service-plan: lite
-- name: zpaging72-uaa
-  type: org.cloudfoundry.managed-service
-  parameters:
-    path: ./xs-security.json
-    service: xsuaa
-    service-name: zpaging72-xsuaa-service
-    service-plan: application
 - name: zpaging72-repo-host
   type: org.cloudfoundry.managed-service
   parameters:
